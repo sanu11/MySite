@@ -1,5 +1,17 @@
 from __future__ import unicode_literals
-
 from django.db import models
+
+class Blog(models.Model):
+	title=models.CharField(max_length=1000)
+	date=models.DateField('Written on')
+	body=models.TextField()
+
+class Comment(models.Model):
+	name=models.CharField(max_length=200)
+	email=models.EmailField(max_length=200)
+	phone=models.CharField(max_length=12)
+	message=models.TextField()
+	blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+
 
 # Create your models here.
