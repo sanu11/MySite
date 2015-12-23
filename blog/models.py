@@ -11,7 +11,6 @@ class Comment(models.Model):
 	email=models.EmailField(max_length=200)
 	phone=models.CharField(max_length=12)
 	message=models.TextField()
-	blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
 
 # Create your models here.

@@ -8,7 +8,7 @@ def index(request):
 
 def data(request):
 	title=Blog.objects.order_by("date")
-	con={'titl':title}
+	con={'title':title}
 	return render(request,'blog/title.html',con)
 
 def tail(request,ob):
